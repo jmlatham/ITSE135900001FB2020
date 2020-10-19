@@ -9,3 +9,6 @@ print(eClass.getPrivateVariable2())
 
 print("\n""public values:")
 print(eClass.name, eClass.age)
+
+print()
+print("Added GitHub")
