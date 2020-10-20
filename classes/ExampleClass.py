@@ -5,7 +5,7 @@ class ExampleClass:
   def __init__(self, nameValue, ageValue):
     self.name = nameValue
     self.age = ageValue
-  
+
   def setPrivateVariable1(self, value):
     self.__privateVariable1 = value
 
