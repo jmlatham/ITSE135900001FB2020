@@ -1,0 +1,19 @@
+I got this error by leaving off a parenthesis
+for example:
+print(
+  
+  File "main.py", line 12
+    if False:
+    ^
+SyntaxError: invalid syntax
+
+
+
+I got this by trying:
+print(Jonathan)
+Traceback (most recent call last):
+  File "main.py", line 6, in <module>
+    module2.runLab2_1_1_7()
+  File "/home/runner/ITSE135900001FB2020/Labs.py", line 13, in runLab2_1_1_7
+    print(Jonathan)
+NameError: name 'Jonathan' is not defined
