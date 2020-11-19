@@ -1,195 +1,128 @@
-from classes.ExampleClass import ExampleClass
-from Labs import Labs
-
-
-
-
-
-
-if False:
-  anything = input("Enter a number: ")
-  something = anything * 2.0
-  print(anything, "to the power of 2 is", something)
-
-  userAge = int(input("Enter Your Age: "))
-  userName = input("Enter Your Name: ")
-  favoriteAge = 54
-
-  category1CutOff = 18
-  category2CutOff = 13
-
-  if userAge >= category1CutOff:
-    print("Hello, ", userName)
-    print("Welcome to our program at Category 1. You are our priority!")
-    if (userName.lower() == "smith" or userName.lower() == "bill") and userAge==favoriteAge:
-      print("you are my favorite person.")
-  elif userAge >= category2CutOff:
-    print("Yo!", userName)
-    print("You are in Category 2. ")
-    if userName.lower() == "jones":
-      print("you are my favorite person.")
-  elif userAge >= 3:
-    print("hi little camper")
-    print("you are ", userAge, "years old")
-  else:
-    print("Get out of here, you are not old enough.")
-
-
-
-
-if False:
-  var = 1
-  account_balance = 1000.0
-  client_name = 'John Doe'
-  print(var, account_balance, client_name)
-
-
-if False:
-  print(True > False)
-  print(True < False)
-  AgeOfCat = input("What is the age of your cat?")
-  if AgeOfCat == 0:
-    print("Sorry can't commute")
-  else:
-    print(1/AgeOfCat)
-
-
-
-if False:
-  print("helloooooo,","nurse!!!", sep=" ", end="\n")
-  print('Yako said, "Hello, nurse"')
-  print("No he didn't!")
-  print('No he didn\'t')
-  print("H", "E", "L" "L", "O", sep="-")
-
-
-  print(123)
-  print('c')
-
-  print(11111111)
-  print(11,111,111)
-  print(11_111_111)
-  print("11,111,111")
-
-  variable1 = 11111111
-  variable2 = "11111111"
-  print(variable1)
-  print(variable2)
-  print(variable1*3)
-  print(variable2*3)
-  print(variable1*variable2)
-
-if False:
-  module2 = Labs()
-  module2.runLab2_1_1_7()
-
-
-
-if False:
-  exampleClass = ExampleClass("Marshall", 3)
-  print(exampleClass.doubleMyAge())
-  print(exampleClass.name)
-  exampleClass.age = 103
-  exampleClass.name = "John"
-  print(exampleClass.name, exampleClass.age)
-
-  #print(exampleClass.privateVariable1)
-  #print(exampleClass.__privateVariable1)
-
-if False:
-  eClass = ExampleClass("me", 13)
-  print("My First Program in Python!!")
-  print(eClass.doubleMyAge())
-  print("\n""private values:")
-  print(eClass.getPrivateVariable1())
-  eClass.setPrivateVariable1("private Variable 1 has changed")
-
-
-
-  print(eClass.getPrivateVariable1())
-  print("\nnow working with \"#2\"\n")
-  print(eClass.getPrivateVariable2())
-
-
-  eClass.setPrivateVariable2("abc")
-  print(eClass.getPrivateVariable2())
-  eClass.setPrivateVariable2("def")
-  print(eClass.getPrivateVariable2())
-  
-  flamawhammer = ExampleClass("",15)
-  print("------------")
-  print(flamawhammer.doubleMyAge())
-  
-
-  print("\n""public values:")
-  print(eClass.name, eClass.age)
-
-  print()
-  print("Added GitHub")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-if False:
-  from vehicles.Vehicle import Vehicle
-  from vehicles.LandVehicle import LandVehicle
-  from vehicles.SeaVehicle import SeaVehicle
-  from vehicles.AirVehicle import AirVehicle
-  from vehicles.SpaceVehicle import SpaceVehicle
-  from vehicles.WheeledVehicle import WheeledVehicle
-  from vehicles.TrackedVehicle import TrackedVehicle
-  from vehicles.HoverCraftVehicle import HoverCraftVehicle
-  from vehicles.Car import Car
-  from vehicles.Truck import Truck
-
-  vehicle = Vehicle()
-  landVehicle = LandVehicle()
-  seaV = SeaVehicle()
-  airV = AirVehicle()
-  spaceV = SpaceVehicle()
-  wheeledVechicle = WheeledVehicle()
-  trackedV = TrackedVehicle()
-  hcV = HoverCraftVehicle()
-  car1 = Car("honk honk")
-  car2 = Car("beep beep")
-  truck1 = Truck("hooey hooey")
-
-  vehicle.blowHorn()
-  landVehicle.blowHorn()
-  wheeledVechicle.blowHorn()
-  seaV.blowHorn()
-  airV.blowHorn()
-  spaceV.blowHorn()
-  trackedV.blowHorn()
-  hcV.blowHorn()
-  car1.blowHorn()
-  car2.blowHorn()
-  truck1.blowHorn()
-
-  print(isinstance(car1, Vehicle))
-  print(isinstance(car1, SeaVehicle))
-  print(issubclass(Car, Vehicle))
-  print(issubclass(WheeledVehicle, SpaceVehicle))
+# from classes.ExampleClass import ExampleClass
+# from Labs import Labs
+# from classes.LeapYear import LeapYear
+# from classes.BitwiseOperator import BitwiseOperator
+# from classes.DecimalToBinary import DecimalToBinary
+# from classes.ClassWork import ClassWork
+from classes.FunctionsLessons import FunctionsLessons
+from classes.OlderClassWork import OlderClassWork
+from classes.functions import *
+import random
+
+
+def runOlderClassWork():
+  ocw = OlderClassWork()
+  menu = {"1":"First Chess Trial","2":"List Sorting Test","3":"List Test 1","4":"Bitwise Operator Test","5":"Decimal To Binary Converter","6":"Leap Year Test","7":"if elif Statement Test","8":"Print with different Types Test","9":"First if Statement Test","10":"Variable Test 1","11":"Module 2 Lab 2.1.1.7","12":"ExampleClass Test 1","13":"ExampleClass Test 2","14":"Vehicles Test","101":"Making Functions","102":"Positional and Keyword Arguments","103":"Using None","104":"Strange Function","105":"Showing Function Scope","106":"Using Global Keyword","107":"Changing Variables within a function","109":"Create and Print Tuples","1010":"Using Tuples","1011":"Tuple Immutability", "1012":"Adding and Multiplying Tuples","1013":"Creating and using Dictionaries","1014":"Calculating Scores Example", "1015":"Print Random Integers","1016":"Run Game", "1017":"Test Data Structures", "1018":"Print Method Descriptions","1019":"Run Math module test", "1020":"Print Math module components","1021":"Test floor(), ceil(), trunc() from the math module","1022":"Print Platform information","0":"Quit"}
+  while True:
+    displayDictionaryMenu(menu)
+    menuChoice = getMenuChoice()
+    if menuChoice == 0:
+      break
+    elif menuChoice == 1:
+      ocw.runFirstChessTrial()
+    elif menuChoice == 2:
+      ocw.runListSortingTests()
+    elif menuChoice == 3:
+      ocw.runListTest1()
+    elif menuChoice == 4:
+      ocw.runBitwiseOperatorTest()
+    elif menuChoice == 5:
+      ocw.runDecimalToBinaryConverter()
+    elif menuChoice == 6:
+      ocw.runLeapYearTest()
+    elif menuChoice == 7:
+      ocw.testIf_ElIfStatements()
+    elif menuChoice == 8:
+      ocw.testPrintWithDifferentTypes()
+    elif menuChoice == 9:
+      ocw.runFirstIfStatementTest()
+    elif menuChoice == 10:
+      ocw.runVariablesTest1()
+    elif menuChoice == 11:
+      ocw.runModule2Lab2_1_1_7()
+    elif menuChoice == 12:
+      ocw.useExampleClass1()
+    elif menuChoice == 13:
+      ocw.useExampleClass2()
+    elif menuChoice == 14:
+      ocw.testVehicles()
+    elif menuChoice == 101:
+      funLess.makingFunctions()
+    elif menuChoice == 102:
+      funLess.positionalKeywordArguments()
+    elif menuChoice == 103:
+      funLess.usingNone()
+    elif menuChoice == 104:
+      funLess.strangeFunction()
+    elif menuChoice == 105:
+      funLess.showScope()
+    elif menuChoice == 106:
+      funLess.keywordGlobal()
+      print("========================")
+      var = 1
+      print("before calling myGlobalVariableTest():", var)
+      myGlobalVariableTest()
+      print("after calling myGlobalVariableTest():", var, end="\n\n\n\n")
+    elif menuChoice == 107:
+      funLess.changeVariableWithinFunction()
+    elif menuChoice == 109:
+      funLess.createAndPrintTuples()
+    elif menuChoice == 1010:
+      funLess.usingTuples()
+    elif menuChoice == 1011:
+      funLess.tupleImmutability() 
+    elif menuChoice == 1012:
+      funLess.addingAndMultiplyingTuples()
+    elif menuChoice == 1013:
+      funLess.creatingDictionaries()
+    elif menuChoice == 1014:
+      funLess.calculatingScoresExample()
+    elif menuChoice == 1015:
+      print("\n" * 3)
+      printRandomIntegers(10, 100)
+      print("\n" * 3)
+    elif menuChoice == 1016:
+      print("\n" * 3)
+      runGame()
+      print("\n" * 3)
+    elif menuChoice == 1017:
+      print("\n" * 3)
+      runDataStructures()
+      print("\n" * 3)
+    elif menuChoice == 1018:
+      print("\n" * 3)
+      printDescriptions()
+      print("\n" * 3)
+    elif menuChoice == 1019:
+      print("\n" * 3)
+      runMathTest()
+      print("\n" * 3)
+    elif menuChoice == 1020:
+      print("\n" * 3)
+      listMathMethods()
+      print("\n" * 3)
+    elif menuChoice == 1021:
+      print("\n" * 3)
+      ceilFloorTrunc()
+      print("\n" * 3)
+    elif menuChoice == 1022:
+      print("\n" * 3)
+      printPlatformInformation()
+      print("\n" * 3)
+
+
+menu = {"23":"Exceptions Tests","108":"Run older code","0":"Quit"}
+
+funLess = FunctionsLessons()
+
+while True:
+  displayDictionaryMenu(menu)
+  menuChoice = getMenuChoice()
+  if menuChoice == 0:
+    break
+  elif menuChoice == 108:
+    runOlderClassWork()
+  elif menuChoice == 23:
+    print("\n" * 3)
+    exceptionsTests()
+    print("\n" * 3)

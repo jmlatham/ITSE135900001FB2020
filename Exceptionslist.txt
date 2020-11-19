@@ -1,19 +1,48 @@
-I got this error by leaving off a parenthesis
-for example:
-print(
+Cause:I got this error by leaving off a parenthesis
+Example:for example:
+ExampleCode:print(
   
-  File "main.py", line 12
+Traceback:  File "main.py", line 12
     if False:
     ^
-SyntaxError: invalid syntax
+Type: SyntaxError
+Description: invalid syntax
 
 
 
 I got this by trying:
 print(Jonathan)
-Traceback (most recent call last):
-  File "main.py", line 6, in <module>
-    module2.runLab2_1_1_7()
-  File "/home/runner/ITSE135900001FB2020/Labs.py", line 13, in runLab2_1_1_7
-    print(Jonathan)
+"Traceback (most recent call last)":
+  ['File "main.py", line 6, in <module>',
+    'module2.runLab2_1_1_7()',
+  'File "/home/runner/ITSE135900001FB2020/Labs.py", line 13, in runLab2_1_1_7',
+    'print(Jonathan)']
 NameError: name 'Jonathan' is not defined
+
+ErrorId=1
+ErrorType=NameError
+
+
+ErrorId: 1
+ErrorType: NameError
+ErrorTraceBack: Traceback (most recent call last):\nFile "main.py", line 6, in <module>\n\tmodule2.runLab2_1_1_7()\nFile "/home/runner/ITSE135900001FB2020/Labs.py", line 13, in runLab2_1_1_7\n\tprint(Jonathan)
+ErrorCause: name 'Jonathan' is not defined
+ErrorSolution: defined the variable Jonathan before calling it. Jonathan = 0
+
+JSON format
+[
+ {
+  "ErrorId":1,
+  "ErrorType": "NameError",
+  "ErrorTraceBack": "alise i;asje ;asije ;aisjef",
+  "ErrorCause":"alseijfef",
+  "ErrorSolution":"a;dkjasdkf"
+ },
+ {
+  "ErrorId":2,
+  "ErrorType": "NameError",
+  "ErrorTraceBack": "alise i;asje ;asije ;aisjef",
+  "ErrorCause":"alseijfef",
+  "ErrorSolution":["a;dkjasdkf", "ja;slkdfj ", "ae;lij"]
+ },
+]
