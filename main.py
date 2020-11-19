@@ -6,6 +6,8 @@
 # from classes.ClassWork import ClassWork
 from classes.FunctionsLessons import FunctionsLessons
 from classes.OlderClassWork import OlderClassWork
+from classes.InstanceVariables import InstanceVariables
+from classes.FileClass import FileClass
 from classes.functions import *
 import random
 
@@ -111,7 +113,7 @@ def runOlderClassWork():
       print("\n" * 3)
 
 
-menu = {"23":"Exceptions Tests","108":"Run older code","0":"Quit"}
+menu = {"23":"Exceptions Tests","24":"Instance variables vs Class variables","25":"File Stream","26":"File per character","27":"File per line with per character printing","28":"File per line","29":"File per line characters separated by dash","30":"Write Files","31":"Files and Directories","50":"new file program","108":"Run older code","0":"Quit"}
 
 funLess = FunctionsLessons()
 
@@ -126,3 +128,77 @@ while True:
     print("\n" * 3)
     exceptionsTests()
     print("\n" * 3)
+  elif menuChoice == 24:
+    print("\n" * 3)
+    exampleObject1 = InstanceVariables()
+    exampleObject2 = InstanceVariables(2)
+
+    exampleObject2.setSecond(3)
+
+    exampleObject3 = InstanceVariables(4)
+    exampleObject3.__third = 5 # not private
+    exampleObject3.third = 5
+
+
+    print("exampleObject1 dict:\n", exampleObject1.__dict__, "\n\tcounter:", exampleObject1.counter, "\n\tclassCounter:", exampleObject1.classCounter)
+    print("exampleObject2 dict:\n", exampleObject2.__dict__, "\n\tcounter:", exampleObject2.counter, "\n\tclassCounter:", exampleObject2.classCounter)
+    print("exampleObject3 dict:\n", exampleObject3.__dict__, "\n\tcounter:", exampleObject3.counter, "\n\tclassCounter:", exampleObject3.classCounter)
+    # print(exampleObject2.__dict__, exampleObject2.counter, exampleObject2.classCounter)
+    # print(exampleObject3.__dict__, exampleObject3.counter, exampleObject3.classCounter)
+    print("\n" * 3)
+
+  elif menuChoice == 25:
+    print("\n" * 3)
+    # import classes.FileClass
+    fileClass = FileClass()
+    fileClass.readFirstFile()
+    print("\n" * 3)
+    
+  elif menuChoice == 26:
+    print("\n" * 3)
+    # import classes.FileClass
+    fileClass = FileClass()
+    
+    fileClass.readSecondFile()
+    print("\n" * 3)
+    
+  elif menuChoice == 27:
+    print("\n" * 3)
+    # import classes.FileClass
+    fileClass = FileClass()
+    
+    fileClass.readThirdFile()
+    print("\n" * 3)
+    
+  elif menuChoice == 28:
+    print("\n" * 3)
+    # import classes.FileClass
+    fileClass = FileClass()
+    
+    fileClass.readLinesCode(False)
+    print("\n" * 3)
+
+  elif menuChoice == 29:
+    print("\n" * 3)
+    # import classes.FileClass
+    fileClass = FileClass()
+    
+    fileClass.readLinesCode(True)
+    print("\n" * 3)
+
+  elif menuChoice == 30:
+    print("\n" * 3)
+    fileClass = FileClass()
+    fileClass.writeFile()
+    print("\n" * 3)
+
+  elif menuChoice == 31:
+    print("\n" * 3)
+    fileClass = FileClass()
+    fileClass.filesAndDirectories()
+    print("\n" * 3)
+  elif menuChoice == 50:
+    from classes.FileManipulator import FileManipulator
+
+    fMan = FileManipulator()
+    fMan.run()
