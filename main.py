@@ -10,13 +10,15 @@ from classes.InstanceVariables import InstanceVariables
 from classes.FileClass import FileClass
 from classes.functions import *
 import random
+from classes.Labs5 import Labs5
 
+# from classes.RegularExpressions import * # need to build a class for this
 
 def runOlderClassWork():
   ocw = OlderClassWork()
-  menu = {"1":"First Chess Trial","2":"List Sorting Test","3":"List Test 1","4":"Bitwise Operator Test","5":"Decimal To Binary Converter","6":"Leap Year Test","7":"if elif Statement Test","8":"Print with different Types Test","9":"First if Statement Test","10":"Variable Test 1","11":"Module 2 Lab 2.1.1.7","12":"ExampleClass Test 1","13":"ExampleClass Test 2","14":"Vehicles Test","101":"Making Functions","102":"Positional and Keyword Arguments","103":"Using None","104":"Strange Function","105":"Showing Function Scope","106":"Using Global Keyword","107":"Changing Variables within a function","109":"Create and Print Tuples","1010":"Using Tuples","1011":"Tuple Immutability", "1012":"Adding and Multiplying Tuples","1013":"Creating and using Dictionaries","1014":"Calculating Scores Example", "1015":"Print Random Integers","1016":"Run Game", "1017":"Test Data Structures", "1018":"Print Method Descriptions","1019":"Run Math module test", "1020":"Print Math module components","1021":"Test floor(), ceil(), trunc() from the math module","1022":"Print Platform information","0":"Quit"}
+  menu = {"1":"First Chess Trial","2":"List Sorting Test","3":"List Test 1","4":"Bitwise Operator Test","5":"Decimal To Binary Converter","6":"Leap Year Test","7":"if elif Statement Test","8":"Print with different Types Test","9":"First if Statement Test","10":"Variable Test 1","11":"Module 2 Lab 2.1.1.7","12":"ExampleClass Test 1","13":"ExampleClass Test 2","14":"Vehicles Test","101":"Making Functions","102":"Positional and Keyword Arguments","103":"Using None","104":"Strange Function","105":"Showing Function Scope","106":"Using Global Keyword","107":"Changing Variables within a function","109":"Create and Print Tuples","1010":"Using Tuples","1011":"Tuple Immutability", "1012":"Adding and Multiplying Tuples","1013":"Creating and using Dictionaries","1014":"Calculating Scores Example", "1015":"Print Random Integers","1016":"Run Game", "1017":"Test Data Structures", "1018":"Print Method Descriptions","1019":"Run Math module test", "1020":"Print Math module components","1021":"Test floor(), ceil(), trunc() from the math module","1022":"Print Platform information","2023":"Exceptions Tests","2024":"Instance variables vs Class variables","2025":"File Stream","2026":"File per character","2027":"File per line with per character printing","2028":"File per line","2029":"File per line characters separated by dash","2030":"Write Files","2031":"Files and Directories","2050":"new file program","0":"Quit"}
   while True:
-    displayDictionaryMenu(menu)
+    displayDictionaryMenu(menu, "OLD CODE")
     menuChoice = getMenuChoice()
     if menuChoice == 0:
       break
@@ -111,94 +113,103 @@ def runOlderClassWork():
       print("\n" * 3)
       printPlatformInformation()
       print("\n" * 3)
+    elif menuChoice == 2023:
+      print("\n" * 3)
+      exceptionsTests()
+      print("\n" * 3)
+    elif menuChoice == 2024:
+      print("\n" * 3)
+      exampleObject1 = InstanceVariables()
+      exampleObject2 = InstanceVariables(2)
+
+      exampleObject2.setSecond(3)
+
+      exampleObject3 = InstanceVariables(4)
+      exampleObject3.__third = 5 # not private
+      exampleObject3.third = 5
 
 
-menu = {"23":"Exceptions Tests","24":"Instance variables vs Class variables","25":"File Stream","26":"File per character","27":"File per line with per character printing","28":"File per line","29":"File per line characters separated by dash","30":"Write Files","31":"Files and Directories","50":"new file program","108":"Run older code","0":"Quit"}
+      print("exampleObject1 dict:\n", exampleObject1.__dict__, "\n\tcounter:", exampleObject1.counter, "\n\tclassCounter:", exampleObject1.classCounter)
+      print("exampleObject2 dict:\n", exampleObject2.__dict__, "\n\tcounter:", exampleObject2.counter, "\n\tclassCounter:", exampleObject2.classCounter)
+      print("exampleObject3 dict:\n", exampleObject3.__dict__, "\n\tcounter:", exampleObject3.counter, "\n\tclassCounter:", exampleObject3.classCounter)
+      # print(exampleObject2.__dict__, exampleObject2.counter, exampleObject2.classCounter)
+      # print(exampleObject3.__dict__, exampleObject3.counter, exampleObject3.classCounter)
+      print("\n" * 3)
+
+    elif menuChoice == 2025:
+      print("\n" * 3)
+      # import classes.FileClass
+      fileClass = FileClass()
+      fileClass.readFirstFile()
+      print("\n" * 3)
+      
+    elif menuChoice == 2026:
+      print("\n" * 3)
+      # import classes.FileClass
+      fileClass = FileClass()
+      
+      fileClass.readSecondFile()
+      print("\n" * 3)
+      
+    elif menuChoice == 2027:
+      print("\n" * 3)
+      # import classes.FileClass
+      fileClass = FileClass()
+      
+      fileClass.readThirdFile()
+      print("\n" * 3)
+      
+    elif menuChoice == 2028:
+      print("\n" * 3)
+      # import classes.FileClass
+      fileClass = FileClass()
+      
+      fileClass.readLinesCode(False)
+      print("\n" * 3)
+
+    elif menuChoice == 2029:
+      print("\n" * 3)
+      # import classes.FileClass
+      fileClass = FileClass()
+      
+      fileClass.readLinesCode(True)
+      print("\n" * 3)
+
+    elif menuChoice == 2030:
+      print("\n" * 3)
+      fileClass = FileClass()
+      fileClass.writeFile()
+      print("\n" * 3)
+
+    elif menuChoice == 2031:
+      print("\n" * 3)
+      fileClass = FileClass()
+      fileClass.filesAndDirectories()
+      print("\n" * 3)
+    elif menuChoice == 2050:
+      from classes.FileManipulator import FileManipulator
+
+      fMan = FileManipulator()
+      fMan.run()
+
+
+menu = {"1":"Lab 5.1.6.4","2":"Lab 5.1.9.18","3":"Lab 5.1.10.6","108":"Run older code","0":"Quit"}
 
 funLess = FunctionsLessons()
 
 while True:
-  displayDictionaryMenu(menu)
+  displayDictionaryMenu(menu, "MAIN")
   menuChoice = getMenuChoice()
   if menuChoice == 0:
     break
   elif menuChoice == 108:
     runOlderClassWork()
-  elif menuChoice == 23:
-    print("\n" * 3)
-    exceptionsTests()
-    print("\n" * 3)
-  elif menuChoice == 24:
-    print("\n" * 3)
-    exampleObject1 = InstanceVariables()
-    exampleObject2 = InstanceVariables(2)
-
-    exampleObject2.setSecond(3)
-
-    exampleObject3 = InstanceVariables(4)
-    exampleObject3.__third = 5 # not private
-    exampleObject3.third = 5
-
-
-    print("exampleObject1 dict:\n", exampleObject1.__dict__, "\n\tcounter:", exampleObject1.counter, "\n\tclassCounter:", exampleObject1.classCounter)
-    print("exampleObject2 dict:\n", exampleObject2.__dict__, "\n\tcounter:", exampleObject2.counter, "\n\tclassCounter:", exampleObject2.classCounter)
-    print("exampleObject3 dict:\n", exampleObject3.__dict__, "\n\tcounter:", exampleObject3.counter, "\n\tclassCounter:", exampleObject3.classCounter)
-    # print(exampleObject2.__dict__, exampleObject2.counter, exampleObject2.classCounter)
-    # print(exampleObject3.__dict__, exampleObject3.counter, exampleObject3.classCounter)
-    print("\n" * 3)
-
-  elif menuChoice == 25:
-    print("\n" * 3)
-    # import classes.FileClass
-    fileClass = FileClass()
-    fileClass.readFirstFile()
-    print("\n" * 3)
-    
-  elif menuChoice == 26:
-    print("\n" * 3)
-    # import classes.FileClass
-    fileClass = FileClass()
-    
-    fileClass.readSecondFile()
-    print("\n" * 3)
-    
-  elif menuChoice == 27:
-    print("\n" * 3)
-    # import classes.FileClass
-    fileClass = FileClass()
-    
-    fileClass.readThirdFile()
-    print("\n" * 3)
-    
-  elif menuChoice == 28:
-    print("\n" * 3)
-    # import classes.FileClass
-    fileClass = FileClass()
-    
-    fileClass.readLinesCode(False)
-    print("\n" * 3)
-
-  elif menuChoice == 29:
-    print("\n" * 3)
-    # import classes.FileClass
-    fileClass = FileClass()
-    
-    fileClass.readLinesCode(True)
-    print("\n" * 3)
-
-  elif menuChoice == 30:
-    print("\n" * 3)
-    fileClass = FileClass()
-    fileClass.writeFile()
-    print("\n" * 3)
-
-  elif menuChoice == 31:
-    print("\n" * 3)
-    fileClass = FileClass()
-    fileClass.filesAndDirectories()
-    print("\n" * 3)
-  elif menuChoice == 50:
-    from classes.FileManipulator import FileManipulator
-
-    fMan = FileManipulator()
-    fMan.run()
+  elif menuChoice == 1:
+    lab5 = Labs5()
+    lab5.lab5_1_6_4()
+  elif menuChoice == 2:
+    lab5 = Labs5()
+    lab5.lab5_1_9_18()
+  elif menuChoice == 3:
+    lab5 = Labs5()
+    lab5.lab5_1_10_6()

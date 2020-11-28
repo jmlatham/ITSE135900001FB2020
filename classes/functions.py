@@ -129,9 +129,16 @@ def myGlobalVariableTest():
       var = 2
       print("Do I know that variable?", var)
 
-def displayDictionaryMenu(menuDictionary):
+def displayDictionaryMenu(menuDictionary, title=""):
+  menuTitle = "*** " + title + " MENU ***"
+  stars = "*" * len(menuTitle)
+  print("\n"+stars)
+  print(menuTitle)
+  print(stars)
   for key in menuDictionary:
+    print("\t", end="")
     print(key, menuDictionary[key], sep=". ")
+  print(stars)
 
 def getMenuChoice():
   try:
