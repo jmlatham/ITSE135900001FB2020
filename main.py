@@ -8,11 +8,12 @@ from classes.FunctionsLessons import FunctionsLessons
 from classes.OlderClassWork import OlderClassWork
 from classes.InstanceVariables import InstanceVariables
 from classes.FileClass import FileClass
-from classes.functions import *
-import random
+from classes.functions import displayDictionaryMenu, getMenuChoice, myGlobalVariableTest, printRandomIntegers, runGame, runDataStructures, printDescriptions, runMathTest, listMathMethods, ceilFloorTrunc, printPlatformInformation, exceptionsTests
 from classes.Labs5 import Labs5
 
 # from classes.RegularExpressions import * # need to build a class for this
+
+funLess = FunctionsLessons()
 
 def runOlderClassWork():
   ocw = OlderClassWork()
@@ -194,8 +195,6 @@ def runOlderClassWork():
 
 
 menu = {"1":"Lab 5.1.6.4","2":"Lab 5.1.9.18","3":"Lab 5.1.10.6","108":"Run older code","0":"Quit"}
-
-funLess = FunctionsLessons()
 
 while True:
   displayDictionaryMenu(menu, "MAIN")
