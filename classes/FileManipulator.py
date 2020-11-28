@@ -1,5 +1,6 @@
 from .functions import displayDictionaryMenu, getMenuChoice
 from os import strerror
+import re
 
 class FileManipulator:
   __filesPath = "files/"
@@ -66,10 +67,57 @@ class FileManipulator:
       self.readFile(fileName)
     except IOError as e:
       print("I/O error occurred: ", strerror(e.errno))
+  
+  def getFileNameMenu(self):
+    print("Display Files")
+    fileDictionary = {"0":"fileTest.txt","1":"tzop.txt"}
+    displayDictionaryMenu(fileDictionary, "FILE")
+    return fileDictionary
+  
+  # def getFileId(self):
+  #   try:
+  #     return input("Which file do you want to search? ")
+  #   except:
+  #     print("Bad selection")
+  #     return self.getFileId()
+
+  def searchFile(self):
+    print("Search File")
+    fileNameDictionary = self.getFileNameMenu()
+    fileId = str(getMenuChoice("Please select a file: "))
+    searchString = input("What do you seek? ")
+    try:
+      print(fileNameDictionary)
+      print(fileId)
+      print(fileNameDictionary[fileId]) # this is trowing an error!!!
+      print(searchString)
+      stream = open(self.__filesPath+fileNameDictionary[fileId], "rt", encoding = "utf-8") 
+      print(stream.read()) # printing the content of the file
+      line = stream.readline()
+      lcnt = 1
+      while line != '':
+        result = re.search(searchString, line)
+        if result:
+          print(lcnt,line, sep=" - ")
+        lcnt += 1
+        # cplncnt = 0
+        # for ch in line:
+        #   if ch != "\n":
+        #     print(ch, end='')
+        #   else:
+        #     print("", end='')
+        #   ccnt += 1
+        #   cplncnt += 1
+        # print(" -->", cplncnt, "characters")
+        line = stream.readline()
+      stream.close()
+    except IOError as e:
+      print("I/O error occurred: ", strerror(e.errno))
+    
 
   def run(self):
     self.printVerticalSpace(2)
-    menu = {"0":"Quit File Manipulator","1":"Write to File","2":"Read File","3":"Append to File"}
+    menu = {"0":"Quit File Manipulator","1":"Write to File","2":"Read File","3":"Append to File","4":"Search File"}
     while True:
       displayDictionaryMenu(menu)
       choice = getMenuChoice()
@@ -86,5 +134,10 @@ class FileManipulator:
       elif choice == 3:
         self.printVerticalSpace()
         self.appendToFile()
+        self.printVerticalSpace()
+      elif choice == 4:
+        # print("\n\n<<-- THIS IS COMING SOON!! -->>\n")
+        self.printVerticalSpace()
+        self.searchFile()
         self.printVerticalSpace()
     self.printVerticalSpace()

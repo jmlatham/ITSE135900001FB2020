@@ -140,9 +140,9 @@ def displayDictionaryMenu(menuDictionary, title=""):
     print(key, menuDictionary[key], sep=". ")
   print(stars)
 
-def getMenuChoice():
+def getMenuChoice(inputMessage="Please select a menu option: "):
   try:
-    return int(input("Please select a menu option: "))
+    return int(input(inputMessage))
   except:
     print("That was an invalid entry. Please try again.")
     return getMenuChoice()

@@ -11,7 +11,7 @@ from classes.FileClass import FileClass
 from classes.functions import displayDictionaryMenu, getMenuChoice, myGlobalVariableTest, printRandomIntegers, runGame, runDataStructures, printDescriptions, runMathTest, listMathMethods, ceilFloorTrunc, printPlatformInformation, exceptionsTests
 from classes.Labs5 import Labs5
 
-# from classes.RegularExpressions import * # need to build a class for this
+from classes.RegularExpressions import RegularExpressions
 
 funLess = FunctionsLessons()
 
@@ -194,7 +194,7 @@ def runOlderClassWork():
       fMan.run()
 
 
-menu = {"1":"Lab 5.1.6.4","2":"Lab 5.1.9.18","3":"Lab 5.1.10.6","108":"Run older code","0":"Quit"}
+menu = {"1":"Lab 5.1.6.4","2":"Lab 5.1.9.18","3":"Lab 5.1.10.6","4":"RegularExpressions","5":"Print Regular Expression information","108":"Run older code","0":"Quit"}
 
 while True:
   displayDictionaryMenu(menu, "MAIN")
@@ -212,3 +212,9 @@ while True:
   elif menuChoice == 3:
     lab5 = Labs5()
     lab5.lab5_1_10_6()
+  elif menuChoice == 4:
+    regEx = RegularExpressions()
+    regEx.runREMethods()
+  elif menuChoice == 5:
+    regEx = RegularExpressions()
+    regEx.printREInformation()
