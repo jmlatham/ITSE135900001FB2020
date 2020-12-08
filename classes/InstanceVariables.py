@@ -3,7 +3,7 @@ class InstanceVariables:
   counter = 0
   def __init__(self, val = 1):
     self.__first = val # private
-    self.first = val
+    self.first = val * 2
     InstanceVariables.classCounter += 1
     self.counter += 1
 

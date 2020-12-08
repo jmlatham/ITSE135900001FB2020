@@ -2,7 +2,7 @@ class ExampleClass:
   __privateVariable1 = "private variable A"
   __privateVariable2 = "private variable B"
 
-  def __init__(self, nameValue, ageValue):
+  def __init__(self, nameValue="Jones", ageValue=13):
     self.name = nameValue
     self.age = ageValue
 
@@ -24,3 +24,10 @@ class ExampleClass:
 
   def doubleMyAge(self):
     return int(self.age)*2
+
+
+if __name__ == "__main__":
+  myClass1 = ExampleClass()
+  myClass2 = ExampleClass("Smith")
+  myClass3 = ExampleClass("Lee", 45)
+  myClass1.getPrivateVariable1()

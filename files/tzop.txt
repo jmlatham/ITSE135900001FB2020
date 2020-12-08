@@ -9,7 +9,7 @@ The Zen of Python
     Complex is better than complicated.
     Flat is better than nested.
     Sparse is better than dense.
-    Readability counts.
+    Readability counts. ibi
     Special cases aren't special enough to break the rules.
     Although practicality beats purity.
     Errors should never pass silently.
@@ -22,8 +22,9 @@ The Zen of Python
     If the implementation is hard to explain, it's a bad idea.
     If the implementation is easy to explain, it may be a good idea.
     Namespaces are one honking great idea -- let's do more of those!
-
-
+impl this line also
+ibi
+ifi
 
 ----------------
 source: https://github.com/python/peps/blob/master/pep-0020.txt

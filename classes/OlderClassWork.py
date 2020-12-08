@@ -334,28 +334,28 @@ class OlderClassWork:
 
 
   def testVehicles(self):
-    from ..vehicles.Vehicle import Vehicle
-    from ..vehicles.LandVehicle import LandVehicle
-    from ..vehicles.SeaVehicle import SeaVehicle
-    from ..vehicles.AirVehicle import AirVehicle
-    from ..vehicles.SpaceVehicle import SpaceVehicle
-    from ..vehicles.WheeledVehicle import WheeledVehicle
-    from ..vehicles.TrackedVehicle import TrackedVehicle
-    from ..vehicles.HoverCraftVehicle import HoverCraftVehicle
-    from ..vehicles.Car import Car
-    from ..vehicles.Truck import Truck
+    from .vehicles.Vehicle import Vehicle
+    from .vehicles.LandVehicle import LandVehicle
+    from .vehicles.SeaVehicle import SeaVehicle
+    from .vehicles.AirVehicle import AirVehicle
+    from .vehicles.SpaceVehicle import SpaceVehicle
+    from .vehicles.WheeledVehicle import WheeledVehicle
+    from .vehicles.TrackedVehicle import TrackedVehicle
+    from .vehicles.HoverCraftVehicle import HoverCraftVehicle
+    from .vehicles.Car import Car
+    from .vehicles.Truck import Truck
 
     vehicle = Vehicle()
-    landVehicle = LandVehicle()
-    seaV = SeaVehicle()
-    airV = AirVehicle()
-    spaceV = SpaceVehicle()
-    wheeledVechicle = WheeledVehicle()
-    trackedV = TrackedVehicle()
-    hcV = HoverCraftVehicle()
-    car1 = Car("honk honk")
-    car2 = Car("beep beep")
-    truck1 = Truck("hooey hooey")
+    landVehicle = LandVehicle("LAND", "AVAILABLE")
+    seaV = SeaVehicle("SEA", "AVAILABLE")
+    airV = AirVehicle("AIR", "AVAILABLE")
+    spaceV = SpaceVehicle("SPACE", "AVAILABLE")
+    wheeledVechicle = WheeledVehicle("WHEELED", "AVAILABLE")
+    trackedV = TrackedVehicle("TRACKED", "AVAILABLE")
+    hcV = HoverCraftVehicle("HOVERCRAFT", "AVAILABLE")
+    car1 = Car("CAR","AVAILABLE","honk honk")
+    car2 = Car("CAR","AVAILABLE","beep beep")
+    truck1 = Truck("TRUCK","AVAILABLE","hooey hooey")
 
     vehicle.blowHorn()
     landVehicle.blowHorn()

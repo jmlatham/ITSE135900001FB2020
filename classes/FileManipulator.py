@@ -70,7 +70,7 @@ class FileManipulator:
   
   def getFileNameMenu(self):
     print("Display Files")
-    fileDictionary = {"0":"fileTest.txt","1":"tzop.txt"}
+    fileDictionary = {"0":"fileTest.txt","1":"tzop.txt","2":"json_file.json","3":"vehicles.json"}
     displayDictionaryMenu(fileDictionary, "FILE")
     return fileDictionary
   
@@ -87,32 +87,56 @@ class FileManipulator:
     fileId = str(getMenuChoice("Please select a file: "))
     searchString = input("What do you seek? ")
     try:
-      print(fileNameDictionary)
-      print(fileId)
-      print(fileNameDictionary[fileId]) # this is trowing an error!!!
-      print(searchString)
+      # print(fileNameDictionary)
+      # print(fileId)
+      # print(fileNameDictionary[fileId]) 
+      # print(searchString)
       stream = open(self.__filesPath+fileNameDictionary[fileId], "rt", encoding = "utf-8") 
-      print(stream.read()) # printing the content of the file
+      # print(stream.read()) # printing the content of the file
       line = stream.readline()
       lcnt = 1
       while line != '':
-        result = re.search(searchString, line)
-        if result:
-          print(lcnt,line, sep=" - ")
-        lcnt += 1
-        # cplncnt = 0
-        # for ch in line:
-        #   if ch != "\n":
-        #     print(ch, end='')
-        #   else:
-        #     print("", end='')
-        #   ccnt += 1
-        #   cplncnt += 1
-        # print(" -->", cplncnt, "characters")
+        try:
+          # result = re.search(searchString, line)
+          allResults = re.findall(searchString, line)
+          if len(allResults):
+            print(allResults)
+          result = re.search(searchString, line)
+          if result:
+            print(result)
+            print(result.start())
+            print(result.end())
+            print(result.span())
+            print(result.string)
+            print(result.group())
+            print(result.groups())
+          # result = line.find(searchString)
+          # print(result)
+          # if result > -1:
+          if result:
+            print(lcnt,line, sep=" - ")
+          lcnt += 1
+          # cplncnt = 0
+          # for ch in line:
+          #   if ch != "\n":
+          #     print(ch, end='')
+          #   else:
+          #     print("", end='')
+          #   ccnt += 1
+          #   cplncnt += 1
+          # print(" -->", cplncnt, "characters")
+        except AttributeError as e:
+          print("AttributeError:", e)
+          break
+        except re.error as e:
+          print("bad search expression: ", e)
+          break
         line = stream.readline()
       stream.close()
     except IOError as e:
       print("I/O error occurred: ", strerror(e.errno))
+  # try searching for * 
+  # what next?
     
 
   def run(self):

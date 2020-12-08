@@ -44,13 +44,13 @@ The number is: 1""")
         integerValue = int(input(prompt))
         if integerValue < min or integerValue > max:
           print("Error: the value is not within permitted range (" + str(min) + ".." + str(max) + ")")
-          readint(prompt, min, max)
+          return readint(prompt, min, max)
         else:
-            return integerValue
+          return integerValue
       except:
         print("Error: wrong input.")
-        readint(prompt, min, max)
-
+        return readint(prompt, min, max)
+    
     v = readint("Enter a number from -10 to 10: ", -10, 10)
 
     print("The number is:", v)
@@ -103,6 +103,8 @@ Expected output:
           if len(tempString) > 0:
             stringList.append(tempString)
           tempString = ""
+      if(len(tempString)) > 0:
+        stringList.append(tempString)
       return stringList
     print("\nmysplit('To be or not to be, that is the question')")
     print(mysplit("To be or not to be, that is the question"))
@@ -228,7 +230,7 @@ Sample output:
 
     def getLEDDisplay(value):
       ledDisplay = ""
-      if isInt(value):
+      if isInt(value) and int(value) > 0:
         strValue = str(value)
         for section in range(5):
           for char in strValue:
@@ -237,7 +239,7 @@ Sample output:
           ledDisplay += "\n"
         return ledDisplay
       else:
-        return "not an integer"
+        return "not a positive integer"
 
     print("123\n")
     print(getLEDDisplay(123))
